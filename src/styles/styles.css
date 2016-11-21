@@ -22,23 +22,17 @@
 #form h1{
   text-align: center;
 }
-#header{
-  max-width: 850px;
-}
+
+
+
 .row {
   margin: 0 auto;
 }
 a.active {
-  color: orange;
+  background-color: white;
 }
 
-.nav-item {
-  padding-top: 10px;
-}
-.navbar-right {
-  float: right!important;
-  right: -15px;
-}
+
 
 .card-block {
   text-align: center;
@@ -66,10 +60,6 @@ a.active {
   position: relative;
   top: 500px;
 }
-.header1-text{
-  position: relative;
-  top: 30px;
-}
 
 .bk-masthead p, .bk-masthead h1{
   text-align: center;
@@ -77,10 +67,6 @@ a.active {
 
 div .row .jumbotron{
   padding-top: 10px;
-
-
-
-
 }
 
 
@@ -100,7 +86,6 @@ div .row .jumbotron{
 }
 
 .separator {
-
   height: 60px;
   margin: 40px;
 }
@@ -126,14 +111,11 @@ div .row .jumbotron{
 }
 
 .center-content {
-
-
   text-align: center;
 }
 
 
 .overview-buttons {
-
   margin-right: 10px;
 }
 

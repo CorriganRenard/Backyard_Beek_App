@@ -11,7 +11,6 @@ import {loadBeeHives} from './actions/beeHiveActions';
 import {loadHiveTypes} from './actions/hiveTypeActions';
 
 import {loadSuperTypes} from './actions/superTypeActions';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/styles.css';
 // import '../node_modules/jquery/dist/jquery.min';
 // import '../node_modules/bootstrap/dist/js/bootstrap.min';

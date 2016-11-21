@@ -1,93 +1,72 @@
 import React, {PropTypes} from 'react';
 import {Link, IndexLink} from 'react-router';
-import LoadingDots from './LoadingDots';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 
-const Header = ({loading}) => {
+const navbarInstance = (
+    <Navbar inverse collapseOnSelect>
+        <Navbar.Header>
+            <Navbar.Brand>
+                <Link to="/">
+                  Backyard Beek
+                </Link>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+            <Nav>
+                <IndexLinkContainer to="/">
+                    <NavItem eventKey={1}>Home</NavItem>
+                </IndexLinkContainer>
+                <LinkContainer to="/beehives">
+                    <NavItem eventKey={2}>Hives</NavItem>
+                </LinkContainer>
+                <LinkContainer to="/about">
+                    <NavItem eventKey={2}>About</NavItem>
+                </LinkContainer>
+
+                <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+                    <MenuItem eventKey={3.1}>Action</MenuItem>
+                    <MenuItem eventKey={3.2}>Another action</MenuItem>
+                    <MenuItem eventKey={3.3}>Something else here</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                </NavDropdown>
+            </Nav>
+            <Nav pullRight>
+                <NavItem eventKey={1} href="#">Login</NavItem>
+                <NavItem eventKey={2} href="#">Sign up</NavItem>
+            </Nav>
+        </Navbar.Collapse>
+    </Navbar>
+);
+
+const Header = () => {
 
     return(
-      <div className="container-fluid" id="header">
-      <nav className="navbar navbar-default navbar-static-top">
-        <div className="container-fluid">
-{/*
-          <!-- Brand and toggle get grouped for better mobile display -->
-*/}
-          <div className="navbar-header">
-    {/*       <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>*/}
-            <Link to="/" className="navbar-brand">Brand</Link>
-          </div>
 
-{/*
-           Collect the nav links, forms, and other content for toggling -->
-*/}
-          <div className="">
-            <ul className="nav navbar-nav">
-              <li className="nav-item active">
-                <IndexLink to="/" activeClassName="active">Home </IndexLink>
-              </li>
-              <li className="nav-item">
-                <Link to="/beehives" activeClassName="active">Yard</Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/about" activeClassName="active">About
-                  {loading && <LoadingDots interval={100} dots={20} />}
-                </Link>
-              </li>
+    navbarInstance
 
-            </ul>
+/*          <ul className="nav navbar-nav">
+        <li className="nav-item active">
+        <IndexLink to="/" activeClassName="active">Home </IndexLink>
+        </li>
+        <li className="nav-item">
+        <Link to="/beehives" activeClassName="active">Yard</Link>
+        </li>
+        <li className="nav-item">
+        <Link to="/about" activeClassName="active">About
 
-            <ul className="nav navbar-nav navbar-right">
-              <li className="nav-item">
-                <IndexLink to="/about" activeClassName="active">Register </IndexLink>
-              </li>
-              <li className="nav-item">
-                <Link to="/about" activeClassName="active">Sign In</Link>
-              </li>
+        </Link>
+        </li>*/
 
-            </ul>
-          </div> {/*/.navbar-collapse -->*/}
-        </div> {/*/.container-fluid -->*/}
-      </nav>
-</div>
-      /*<div>
-        <div className="navbar navbar-static-top">
-          <div className="container">
-            <ul className="nav navbar-nav">
-              <li className="nav-item active">
-                <IndexLink to="/" activeClassName="active">Home </IndexLink>
-              </li>
-              <li className="nav-item">
-                <Link to="/beehives" activeClassName="active">Yard</Link>
-              </li>
-             <li className="nav-item">
-                <Link to="/about" activeClassName="active">About
-                  {loading && <LoadingDots interval={100} dots={20} />}
-                </Link>
-              </li>
-            </ul>
 
-            <ul className="nav navbar-nav navbar-right">
-              <li className="nav-item active">
-                <IndexLink to="/about" activeClassName="active">Register </IndexLink>
-              </li>
-              <li className="nav-item">
-                <Link to="/about" activeClassName="active">Sign In</Link>
-              </li>
-            </ul>
-      </div>
-          </div>
-    </div>*/
+
+
 
     );
 };
 
-Header.propTypes = {
-  loading: PropTypes.bool.isRequired
-};
 
 
 export default Header;
